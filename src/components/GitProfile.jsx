@@ -5,13 +5,11 @@ import ErrorPage from './error-page';
 import ThemeChanger from './theme-changer';
 import AvatarCard from './avatar-card';
 import Details from './details';
-import Skill from './skill';
 import Experience from './experience';
 import Certification from './certification';
 import Education from './education';
 import Project from './project';
 import Blog from './blog';
-import Footer from './footer';
 import {
   genericError,
   getInitialTheme,
@@ -30,6 +28,8 @@ import ExternalProject from './external-project';
 const bgColor = 'bg-base-300';
 
 const GitProfile = ({ config }) => {
+  //storing the list of porjects in an array
+  const projects = ["Appwrite-hackathon", "Inter-IIT-Project", "SandStone-3.0", "Prometeo-hackoverflow", "prometeo-23-app", "Automating-Payments-Snap"];
   const [error, setError] = useState(
     typeof config === 'undefined' && !config ? noConfigError : null
   );
@@ -95,8 +95,12 @@ const GitProfile = ({ config }) => {
           })
           .then((response) => {
             let data = response.data;
+            let repositories = data.items;
+            console.log(repositories);
+            repositories = repositories.filter(repo => projects.includes(repo.name));
+            console.log(repositories);
 
-            setRepo(data.items);
+            setRepo(repositories);
           })
           .catch((error) => {
             handleError(error);
@@ -177,10 +181,6 @@ const GitProfile = ({ config }) => {
                         github={sanitizedConfig.github}
                         social={sanitizedConfig.social}
                       />
-                      <Skill
-                        loading={loading}
-                        skills={sanitizedConfig.skills}
-                      />
                       <Experience
                         loading={loading}
                         experiences={sanitizedConfig.experiences}
@@ -217,13 +217,6 @@ const GitProfile = ({ config }) => {
                   </div>
                 </div>
               </div>
-              <footer
-                className={`p-4 footer ${bgColor} text-base-content footer-center`}
-              >
-                <div className="card compact bg-base-100 shadow">
-                  <Footer content={sanitizedConfig.footer} loading={loading} />
-                </div>
-              </footer>
             </Fragment>
           )
         )}

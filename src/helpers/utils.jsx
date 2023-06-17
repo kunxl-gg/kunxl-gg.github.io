@@ -35,7 +35,7 @@ export const skeleton = ({
 }) => {
   return (
     <div
-      className={`bg-base-300 animate-pulse ${shape}${
+      className={`bg-base-00 animate-pulse ${shape}${
         className ? ` ${className}` : ''
       }${width ? ` ${width}` : ''}${height ? ` ${height}` : ''}`}
       style={style}
@@ -103,42 +103,14 @@ export const sanitizeConfig = (config) => {
 
   const themes = config?.themeConfig?.themes || [
     'light',
-    'dark',
-    'cupcake',
-    'bumblebee',
-    'emerald',
-    'corporate',
-    'synthwave',
-    'retro',
-    'cyberpunk',
-    'valentine',
-    'halloween',
-    'garden',
-    'forest',
-    'aqua',
-    'lofi',
-    'pastel',
-    'fantasy',
-    'wireframe',
-    'black',
-    'luxury',
-    'dracula',
-    'cmyk',
-    'autumn',
-    'business',
-    'acid',
-    'lemonade',
-    'night',
-    'coffee',
-    'winter',
-    'procyon',
+    'dark'
   ];
 
   return {
     github: {
       username: config?.github?.username || '',
       sortBy: config?.github?.sortBy || 'stars',
-      limit: config?.github?.limit || 8,
+      limit: config?.github?.limit || 20,
       exclude: {
         forks: config?.github?.exclude?.forks || false,
         projects: config?.github?.exclude?.projects || [],
