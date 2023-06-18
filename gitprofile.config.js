@@ -13,7 +13,7 @@ const config = {
   social: {
     linkedin: 'kunxl-gg',
     twitter: 'kunxlgg',
-    website: 'https://arifszn.com',
+    website: 'https://kunxl-gg.github.io',
     email: 'tiwari.25@iitj.ac.in',
   },
   resume: {
