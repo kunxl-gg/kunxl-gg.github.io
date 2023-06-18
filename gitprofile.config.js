@@ -6,12 +6,12 @@ const config = {
     sortBy: 'updated', // stars | updated
     limit: 40, // How many projects to display.
     exclude: {
-      forks: true, // Forked projects will not be displayed if set to true.
+      forks: false, // Forked projects will not be displayed if set to true.
       projects: [], // These projects will not be displayed. example: ['my-project1', 'my-project2']
     },
   },
   social: {
-    linkedin: 'ariful-alam',
+    linkedin: 'kunxl-gg',
     twitter: 'kunxlgg',
     website: 'https://arifszn.com',
     email: 'tiwari.25@iitj.ac.in',
@@ -87,7 +87,7 @@ const config = {
   // Display blog posts from your medium or dev account. (Optional)
   blog: {
     source: 'dev', // medium | dev
-    username: 'arifszn', // to hide blog section, keep it empty
+    username: '', // to hide blog section, keep it empty
     limit: 2, // How many posts to display. Max is 10.
   },
   googleAnalytics: {

@@ -50,10 +50,9 @@ const AvatarCard = ({ profile, loading, avatarRing, resume }) => {
             )}
           </h5>
           <div className="mt-3 text-base-content text-opacity-60 font-mono">
-            Badass Programmer | Degenerate 
-          </div>      
-          <div className="text-base-content text-opacity-60 font-mono">
-            Coordinator @ Devlup labs
+            {loading || !profile
+              ? skeleton({ width: 'w-48', height: 'h-5' })
+              : `Badass Programmer | Open Source | Degenrate`}
           </div>
         </div>
         {resume?.fileUrl &&

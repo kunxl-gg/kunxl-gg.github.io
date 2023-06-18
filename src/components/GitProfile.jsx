@@ -10,6 +10,7 @@ import Certification from './certification';
 import Education from './education';
 import Project from './project';
 import Blog from './blog';
+import GitHubCalendar from 'react-github-calendar';
 import {
   genericError,
   getInitialTheme,
@@ -23,13 +24,22 @@ import { HelmetProvider } from 'react-helmet-async';
 import PropTypes from 'prop-types';
 import '../assets/index.css';
 import { formatDistance } from 'date-fns';
-import ExternalProject from './external-project';
 
 const bgColor = 'bg-base-300';
 
 const GitProfile = ({ config }) => {
   //storing the list of porjects in an array
-  const projects = ["Appwrite-hackathon", "Inter-IIT-Project", "SandStone-3.0", "Prometeo-hackoverflow", "prometeo-23-app", "Automating-Payments-Snap"];
+  const projects = [
+    'Appwrite-hackathon',
+    `taskwarrior-flutter`,
+    'iitj-omegle',
+    'Feedback-Form',
+    'Inter-IIT-Project',
+    'SandStone-3.0',
+    'Prometeo-hackoverflow',
+    'prometeo-23-app',
+    'Automating-Payments-Snap',
+  ];
   const [error, setError] = useState(
     typeof config === 'undefined' && !config ? noConfigError : null
   );
@@ -97,7 +107,9 @@ const GitProfile = ({ config }) => {
             let data = response.data;
             let repositories = data.items;
             console.log(repositories);
-            repositories = repositories.filter(repo => projects.includes(repo.name));
+            repositories = repositories.filter((repo) =>
+              projects.includes(repo.name)
+            );
             console.log(repositories);
 
             setRepo(repositories);
@@ -203,11 +215,12 @@ const GitProfile = ({ config }) => {
                         github={sanitizedConfig.github}
                         googleAnalytics={sanitizedConfig.googleAnalytics}
                       />
-                      <ExternalProject
-                        loading={loading}
-                        externalProjects={sanitizedConfig.externalProjects}
-                        googleAnalytics={sanitizedConfig.googleAnalytics}
-                      />
+                      <div className="card shadow-lg compact bg-base-100 flex justify-center items-center">
+                        <GitHubCalendar
+                          colorScheme="light"
+                          username="kunxl-gg"
+                        />
+                      </div>
                       <Blog
                         loading={loading}
                         googleAnalytics={sanitizedConfig.googleAnalytics}
