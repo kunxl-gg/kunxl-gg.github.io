@@ -40,15 +40,15 @@ const config = {
     {
       company: 'Inter IIT Tech Meet',
       position: 'Developer',
-      from: 'September 2021',
-      to: 'Present',
+      from: 'January 2023',
+      to: 'Feb 2023',
       companyLink: 'https://example.com',
     },
     {
       company: 'CCExtractor',
       position: 'Open Source Contributor',
-      from: 'July 2019',
-      to: 'August 2021',
+      from: 'December 2022',
+      to: 'April 2023',
       companyLink: 'https://example.com',
     },
   ],
@@ -113,10 +113,7 @@ const config = {
     hideAvatarRing: false,
 
     // Available themes. To remove any theme, exclude from here.
-    themes: [
-      'light',
-      'dark',
-    ],
+    themes: ['light', 'dark'],
 
     // Custom theme
     customTheme: {
