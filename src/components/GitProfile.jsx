@@ -215,7 +215,7 @@ const GitProfile = ({ config }) => {
                         github={sanitizedConfig.github}
                         googleAnalytics={sanitizedConfig.googleAnalytics}
                       />
-                      <div className="card shadow-lg compact bg-base-100 flex my-2 justify-center items-center">
+                      <div className="card shadow-lg compact bg-base-100 flex py-2 justify-center items-center">
                         <GitHubCalendar
                           colorScheme="light"
                           username="kunxl-gg"
