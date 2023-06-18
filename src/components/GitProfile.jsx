@@ -11,6 +11,7 @@ import Education from './education';
 import Project from './project';
 import Blog from './blog';
 import GitHubCalendar from 'react-github-calendar';
+import { skeleton } from '../helpers/utils';
 import {
   genericError,
   getInitialTheme,
@@ -215,11 +216,22 @@ const GitProfile = ({ config }) => {
                         github={sanitizedConfig.github}
                         googleAnalytics={sanitizedConfig.googleAnalytics}
                       />
-                      <div className="card shadow-lg compact bg-base-100 flex py-2 justify-center items-center">
-                        <GitHubCalendar
-                          colorScheme="light"
-                          username="kunxl-gg"
-                        />
+                      <div className="card shadow-lg compact bg-base-100 py-4 hidden md:flex">
+                        <h5 className="card-title">
+                          {loading ? (
+                            skeleton({ width: 'w-32', height: 'h-8' })
+                          ) : (
+                            <span className="text-base-content opacity-70 pl-10 pb-3">
+                              GitHub Contributions
+                            </span>
+                          )}
+                        </h5>
+                        <div className=" flex justify-center items-center">
+                          <GitHubCalendar
+                            colorScheme="light"
+                            username="kunxl-gg"
+                          />
+                        </div>
                       </div>
                       <Blog
                         loading={loading}
