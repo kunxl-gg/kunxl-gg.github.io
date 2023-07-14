@@ -10,8 +10,6 @@ import Certification from './certification';
 import Education from './education';
 import Project from './project';
 import Blog from './blog';
-import GitHubCalendar from 'react-github-calendar';
-import { skeleton } from '../helpers/utils';
 import {
   genericError,
   getInitialTheme,
@@ -217,9 +215,7 @@ const GitProfile = ({ config }) => {
                         github={sanitizedConfig.github}
                         googleAnalytics={sanitizedConfig.googleAnalytics}
                       />
-                      <GithubContributions
-                      loading={loading} 
-                      />
+                      <GithubContributions loading={loading} />
                       <Blog
                         loading={loading}
                         googleAnalytics={sanitizedConfig.googleAnalytics}
