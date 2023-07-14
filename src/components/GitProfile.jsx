@@ -25,6 +25,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import PropTypes from 'prop-types';
 import '../assets/index.css';
 import { formatDistance } from 'date-fns';
+import GithubContributions from './contributions';
 
 const bgColor = 'bg-base-300';
 
@@ -216,23 +217,9 @@ const GitProfile = ({ config }) => {
                         github={sanitizedConfig.github}
                         googleAnalytics={sanitizedConfig.googleAnalytics}
                       />
-                      <div className="card shadow-lg compact bg-base-100 py-4 hidden md:flex">
-                        <h5 className="card-title">
-                          {loading ? (
-                            skeleton({ width: 'w-32', height: 'h-8' })
-                          ) : (
-                            <span className="text-base-content opacity-70 pl-10 pb-3">
-                              GitHub Contributions
-                            </span>
-                          )}
-                        </h5>
-                        <div className=" flex justify-center items-center">
-                          <GitHubCalendar
-                            colorScheme="light"
-                            username="kunxl-gg"
-                          />
-                        </div>
-                      </div>
+                      <GithubContributions
+                      loading={loading} 
+                      />
                       <Blog
                         loading={loading}
                         googleAnalytics={sanitizedConfig.googleAnalytics}
